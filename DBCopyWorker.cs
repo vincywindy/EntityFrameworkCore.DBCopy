@@ -39,7 +39,7 @@ namespace EntityFrameworkCore
                 if (!_config.IgnoreShadowPropery)
                     Error($"Shadow properties must be explicitly defined \n{string.Join("\n", shadows)}");
                 else
-                    Warn($"Shadow properties maybe explicitly defined \n{string.Join("\n", shadows)}")
+                    Warn($"Shadow properties maybe explicitly defined \n{string.Join("\n", shadows)}");
             }
         }
         #region Log
