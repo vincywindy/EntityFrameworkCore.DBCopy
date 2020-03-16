@@ -29,5 +29,9 @@ namespace EntityFrameworkCore
         /// Let's "Shadow properties must be explicitly defined" do not be an error,Default is false
         /// </summary>
         public bool IgnoreShadowPropery { get; set; } = false;
+        /// <summary>
+        /// The count of the process
+        /// </summary>
+        public int ProcessCount { get; set; } = 50000;
     }
 }
