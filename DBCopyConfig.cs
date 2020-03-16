@@ -16,7 +16,7 @@ namespace EntityFrameworkCore
         /// <summary>
         /// The Logger of Microsoft
         /// </summary>
-        public Microsoft.Extensions.Logging.ILogger<DBCopyConfig> MLogger { get; set; }
+        public Microsoft.Extensions.Logging.ILogger MLogger { get; set; }
         /// <summary>
         /// The Logger of Serilog
         /// </summary>
