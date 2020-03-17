@@ -1,3 +1,4 @@
+[![Build status](https://dev.azure.com/windylulu/EntityFrameworkCore.DBCopy/_apis/build/status/EntityFrameworkCore.DBCopy-ASP.NET%20Core-CI)](https://dev.azure.com/windylulu/EntityFrameworkCore.DBCopy/_build/latest?definitionId=1)
 # EntityFrameworkCore.DBCopy
 Copy database using EFcore
 This is a library for transferring data between different databases,Even databases of different structures.
