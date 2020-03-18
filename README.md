@@ -28,6 +28,27 @@ Check and list the ShadowPropery.
     //this Context is using to Postgresql
  }
  ```
+ You still use AAContext to crud,other Context only use to migrations.
+ 
+ You can map the column type you like
+ ```C#
+ public class AAContext : DbContext
+ {
+    //you use this Context
+     protected override void OnModelCreating(ModelBuilder modelBuilder)
+     {
+        if (Database.IsNpgsql())
+        {
+          modelBuilder.HasPostgresExtension("citext");
+          modelBuilder.Entity<xxx>().Property(d => d.xxx).HasColumnType("citext");
+        }
+        if (Database.IsMySql())
+        {
+         xxxx
+        }
+     }
+ }
+ ```
  2.Update your IDesignTimeDbContextFactory <br>
  ```C#
  ///Default factory
