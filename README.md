@@ -69,7 +69,5 @@ Then call
        copy.Copy();
 ```
 ## Limit
----
-
 This repository use [Entity Framework Extensions](https://entityframework-extensions.net/?z=github&y=entityframework-plus)
 to bulkinsert.It is not free,but you can get free trial.I will replace this in the funture!
