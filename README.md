@@ -57,7 +57,7 @@ Then call
     dotnet ef migrations add xxx --context MysqlAAContext --output-dir Migrations/MySqlMigrations --project xxxEntityFrameworkCore --startup-project xxx
     dotnet ef database update  --context MysqlAAContext --project xxxEntityFrameworkCore --startup-project xxx
  ```
-## Use this library
+## Use this project
  ```C#
    var fromoptionsBuilder = new DbContextOptionsBuilder<AAContext>();
        fromoptionsBuilder.UseSqlServer(xxxx);
@@ -69,17 +69,7 @@ Then call
        copy.Copy();
 ```
 ## Limit
-This repository use 
 ---
 
-[Entity Framework Extensions](https://entityframework-extensions.net/?z=github&y=entityframework-plus)
-
-<a href="https://entityframework-extensions.net/?z=github&y=entityframework-plus">
-<kbd>
-<img src="https://zzzprojects.github.io/images/logo/entityframework-extensions-pub.jpg" alt="Entity Framework Extensions" />
-</kbd>
-</a>
-
----
-to bulkinsert.
-It is not free,but you can get free trial.I will replace this in the funture!
+This repository use [Entity Framework Extensions](https://entityframework-extensions.net/?z=github&y=entityframework-plus)
+to bulkinsert.It is not free,but you can get free trial.I will replace this in the funture!
