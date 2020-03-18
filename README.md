@@ -3,10 +3,14 @@
 [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/EntityFrameworkCore.DBCopy?label=EntityFrameworkCore.DBCopy)](https://www.nuget.org/packages/EntityFrameworkCore.DBCopy)
 # EntityFrameworkCore.DBCopy
 Copy database using EFcore
-This is a library for transferring data between different databases,Even databases of different structures.
+This is a project for transferring data between different databases,Even databases of different structures.
+## Features
+Support SQL Server 2008+,SQL Azure,SQL Compact,Oracle,MySQL,PostgreSQL,SQLite..
+Staging data to continue importing exports..
+Check and list the ShadowPropery.
 ## Before use this
 
-Prepare the migration files for the destination database,An easy way is to inherit your Dbcontext.
+1.Prepare the migration files for the destination database,An easy way is to inherit your Dbcontext.
 
 ```C#
  public class AAContext : DbContext
@@ -24,7 +28,7 @@ Prepare the migration files for the destination database,An easy way is to inher
     //this Context is using to Postgresql
  }
  ```
- Update your IDesignTimeDbContextFactory <br>
+ 2.Update your IDesignTimeDbContextFactory <br>
  ```C#
  ///Default factory
    public class AAContextContextFactory : IDesignTimeDbContextFactory<AAContext>
@@ -57,6 +61,10 @@ Then call
     dotnet ef migrations add xxx --context MysqlAAContext --output-dir Migrations/MySqlMigrations --project xxxEntityFrameworkCore --startup-project xxx
     dotnet ef database update  --context MysqlAAContext --project xxxEntityFrameworkCore --startup-project xxx
  ```
+ 3.Fix Shadow Properties
+ See https://docs.microsoft.com/en-us/ef/core/modeling/shadow-properties
+ You must explicitly declare the shadow property,if you don't, the shadow-properties's data will lose.
+ Fortunately, we check when initialized.You can set IgnoreShadowPropery=true to igonre the error.
 ## Use this project
  ```C#
    var fromoptionsBuilder = new DbContextOptionsBuilder<AAContext>();
@@ -68,6 +76,6 @@ Then call
    var copy = new DBCopyWorker<SkuContext>(fromdboption, todboption);
        copy.Copy();
 ```
-## Limit
+## Attention
 This repository use [Entity Framework Extensions](https://entityframework-extensions.net/?z=github&y=entityframework-plus)
-to bulkinsert.It is not free,but you can get free trial.I will replace this in the funture!
+to bulkinsert temporary.It is not free,but you can get free trial.I will replace this in the funture!
