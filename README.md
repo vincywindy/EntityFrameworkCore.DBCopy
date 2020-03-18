@@ -8,6 +8,7 @@ This is a project for transferring data between different databases,Even databas
 Support SQL Server 2008+,SQL Azure,SQL Compact,Oracle,MySQL,PostgreSQL,SQLite..
 Staging data to continue importing exports..
 Check and list the ShadowPropery.
+100% Linq without use rawsql.
 ## Before use this
 
 1.Prepare the migration files for the destination database,An easy way is to inherit your Dbcontext.
